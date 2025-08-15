@@ -12,19 +12,24 @@ class Employee:
     def give_raise(self, amount):
         # Add more money to the salary
         self.salary += amount
-        print(f"{self.name} got a raise of {amount}! New salary is {self.salary}.")
+        print(f"{self.name} got a raise of {amount}!")
+        print(f"New salary is {self.salary}.")
 
 
 # HR hires two employees
 ram = Employee("Ram", 30000, "Manager")
 sita = Employee("Sita", 25000, "Accountant")
-
+hari = Employee("hari", 6000, "Cashier")
 # HR checks their records
 ram.display_info()
 sita.display_info()
+hari.display_info()
 
 # Ram is rewarded for his work
 ram.give_raise(2000)
+
+#update salary display
+ram.display_info()
 
 
 #In my program, HR hires two employees  Ram and Sita. Ram is a Manager with a salary of 30,000 and 
