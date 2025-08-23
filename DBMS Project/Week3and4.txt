@@ -1,0 +1,37 @@
+Main Entities and Their Roles
+1.	Student Represents individuals enrolled in Yoobee College. Attributes: StudentID (PK), FirstName, LastName, DOB, Gender, Address, Email, Phone, ProgramID (FK).
+2.	Program Represents academic programs offered (e.g., Bachelor of IT, Diploma in Business) Attributes: ProgramID (PK), ProgramName, Duration, DepartmentID (FK).
+3.	Department Academic unit responsible for managing programs and lecturers. Attributes: DepartmentID (PK), DepartmentName, Location, HeadOfDepartment (FK → Lecturer).
+4.	Lecturer Academic staff responsible for teaching. Attributes: LecturerID (PK), FirstName, LastName, Email, Phone, DepartmentID (FK).
+5.	Course Represents subjects taught in a program. Attributes: CourseID (PK), CourseName, Credits, ProgramID (FK), DepartmentID (FK).
+6.	Class (Section) Represents an instance of a course offered in a semester. Attributes: ClassID (PK), CourseID (FK), LecturerID (FK), Semester, Year, Schedule.
+7.	Enrollment (Associative Entity) Links students to classes they attend.Attributes: EnrollmentID (PK), StudentID (FK), ClassID (FK), Grade.
+
+EER Diagram
+•	Department ⟶ manages ⟶ Program
+•	Department ⟶ employs ⟶ Lecturer
+•	Program ⟶ offers ⟶ Course
+•	Course ⟶ scheduled as ⟶ Class
+•	Lecturer ⟶ teaches ⟶ Class
+•	Student ⟶ enrols in ⟶ Class (through Enrollment)
+Table Design
+After mapping entities and relationships, the following tables are required:
+1.	Student (StudentID PK, FirstName, LastName, DOB, Gender, Address, Email, Phone, ProgramID FK)
+2.	Program (ProgramID PK, ProgramName, Duration, DepartmentID FK)
+3.	Department (DepartmentID PK, DepartmentName, Location, HeadOfDepartment FK)
+4.	Lecturer (LecturerID PK, FirstName, LastName, Email, Phone, DepartmentID FK)
+5.	Course (CourseID PK, CourseName, Credits, ProgramID FK, DepartmentID FK)
+6.	Class (ClassID PK, CourseID FK, LecturerID FK, Semester, Year, Schedule)
+7.	Enrollment (EnrollmentID PK, StudentID FK, ClassID FK, Grade)
+
+Week 4 - Activity 1: Design use case diagram
+
+Step 1: Write the number of actors and use cases for your college project, defining the scope of the project in the same way as the activity completed in Week 3 for your college.
+The system allows students to register and enroll in courses, lecturers to teach assigned classes and record grades, and the admin to manage programs, departments, and timetables. 
+
+We have three main actors:
+1.	Students, who can register, enroll in courses, and check their grades or timetable.
+2.	Lecturers, who can see their assigned classes and record student grades.
+3.	Administrators, who manage everything – adding students, lecturers, courses, and generating reports.
+ Use Cases: 6 (Register, Enroll, Assign Lecturer, and Manage Timetable, Record Grades, and View Reports)
+
